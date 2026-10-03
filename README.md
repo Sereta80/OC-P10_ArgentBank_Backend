@@ -20,7 +20,7 @@ _(Laisser ce terminal ouvert en arrière-plan)_
 cd ~/Documents/OC/Projets_OC/Projet10-Implementez_le_front_end_d_une_appli_bancaire_avec_React/ArgentBank/OC-P10_ArgentBank_Backend
 ```
 
-2. Si tu as réinitialisé la base de données et si on n'a pas encore dev :
+2. Si on a réinitialisé la base de données et si on n'a pas encore dev :
 
 ```bash
 npm run populate-db
@@ -34,11 +34,14 @@ npm run populate-db
 cd ~/Documents/OC/Projets_OC/Projet10-Implementez_le_front_end_d_une_appli_bancaire_avec_React/ArgentBank/OC-P10_ArgentBank_Backend
 ```
 
+
 2. Démarre le serveur back-end :
 
 ```bash
 npm run dev:server
 ```
+
+_(Laisser ce terminal ouvert en arrière-plan)_
 
 
 ### 4. Terminal 4 — Lancer l'application (Front-end React)
@@ -54,6 +57,8 @@ cd ~/Documents/OC/Projets_OC/Projet10-Implementez_le_front_end_d_une_appli_banca
 ```bah
 npm run dev
 ```
+
+_(Laisser ce terminal ouvert en arrière-plan)_
 
 ---
 
