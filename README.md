@@ -1,5 +1,63 @@
 # Travail en cours
 
+## Pour lancer le projet
+
+### 1. Terminal 1 — Lancer le serveur de base de données (MongoDB)
+
+```bash
+cd ~/Documents/OC/Projets_OC/Projet10-Implementez_le_front_end_d_une_appli_bancaire_avec_React/ArgentBank/OC-P10_ArgentBank_Backend
+
+~/mongodb/bin/mongod --dbpath ~/data/db
+```
+
+_(Laisser ce terminal ouvert en arrière-plan)_
+
+### 2. Terminal 2 — Réinitialiser la base de données *(optionnel)*
+
+1. Naviguer vers le dossier back-end :
+
+```bash
+cd ~/Documents/OC/Projets_OC/Projet10-Implementez_le_front_end_d_une_appli_bancaire_avec_React/ArgentBank/OC-P10_ArgentBank_Backend
+```
+
+2. Si tu as réinitialisé la base de données et si on n'a pas encore dev :
+
+```bash
+npm run populate-db
+```
+
+### 3. Terminal 3 — Lancer l'API (Back-end)
+
+1. Naviguer vers le dossier back-end :
+
+```bash
+cd ~/Documents/OC/Projets_OC/Projet10-Implementez_le_front_end_d_une_appli_bancaire_avec_React/ArgentBank/OC-P10_ArgentBank_Backend
+```
+
+2. Démarre le serveur back-end :
+
+```bash
+npm run dev:server
+```
+
+
+### 4. Terminal 4 — Lancer l'application (Front-end React)
+
+1. Naviguer vers le dossier front-end :
+
+```bash
+cd ~/Documents/OC/Projets_OC/Projet10-Implementez_le_front_end_d_une_appli_bancaire_avec_React/ArgentBank/OC-P10_ArgentBank-Frontend
+```
+
+2. Démarre le serveur de développement React :
+
+```bah
+npm run dev
+```
+
+---
+
+
 # Argent Bank API
 
 This codebase contains the code needed to run the backend for Argent Bank.
