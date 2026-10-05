@@ -35,7 +35,7 @@ cd ~/Documents/OC/Projets_OC/Projet10-Implementez_le_front_end_d_une_appli_banca
 ```
 
 
-2. Démarre le serveur back-end :
+2. Démarrer le serveur back-end :
 
 ```bash
 npm run dev:server
@@ -52,7 +52,7 @@ _(Laisser ce terminal ouvert en arrière-plan)_
 cd ~/Documents/OC/Projets_OC/Projet10-Implementez_le_front_end_d_une_appli_bancaire_avec_React/ArgentBank/OC-P10_ArgentBank-Frontend
 ```
 
-2. Démarre le serveur de développement React :
+2. Démarrer le serveur de développement React :
 
 ```bah
 npm run dev
