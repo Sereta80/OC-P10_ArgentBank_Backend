@@ -1,17 +1,17 @@
-# Argent Bank – Back-end (API)
+# 🏦 Argent Bank – Back-end (API)
 
 API du projet 10 de la formation **Intégrateur web** d'OpenClassrooms. Elle est utilisée par le front-end : [OC-P10_ArgentBank-Frontend](https://github.com/Sereta80/OC-P10_ArgentBank-Frontend).
 
 Ce dépôt contient aussi la **proposition de documentation Swagger pour la phase 2 (transactions)** : `swagger-transactions.yaml`.
 
-## Technologies
+## 🛠️ Technologies
 
 - Node.js et Express
 - MongoDB et Mongoose
 - JSON Web Token (authentification)
 - Swagger (documentation de l'API)
 
-## Prérequis
+## 📋 Prérequis
 
 - [Node.js](https://nodejs.org/) et npm
 - [MongoDB Community Server](https://www.mongodb.com/try/download/community)
@@ -23,7 +23,7 @@ node --version
 mongod --version
 ```
 
-## Installation et lancement
+## 🚀 Installation et lancement
 
 1. Cloner le dépôt et installer les dépendances :
 
@@ -53,16 +53,16 @@ L'API est disponible sur `http://localhost:3001`.
 npm run populate-db
 ```
 
-## Comptes de test
+## 👤 Comptes de test
 
 | Utilisateur | Email | Mot de passe | Nom d'utilisateur |
 |---|---|---|---|
 | Tony Stark | `tony@stark.com` | `password123` | `Iron` |
 | Steve Rogers | `steve@rogers.com` | `password456` | `Captain` |
 
-## Documentation de l'API
+## 📖 Documentation de l'API
 
-### Phase 1 – Utilisateur (implémentée)
+### 🔐 Phase 1 – Utilisateur (implémentée)
 
 Une fois l'API lancée, la documentation est disponible sur : `http://localhost:3001/api-docs` (fichier `swagger.yaml`).
 
@@ -74,7 +74,7 @@ Endpoints utilisés par le front-end :
 | `GET` | `/api/v1/user/profile` | Récupère le profil de l'utilisateur connecté |
 | `PUT` | `/api/v1/user/profile` | Modifie le profil de l'utilisateur connecté |
 
-### Phase 2 – Transactions (proposition)
+### 💳 Phase 2 – Transactions (proposition)
 
 Le fichier `swagger-transactions.yaml` (Swagger 2.0) décrit les endpoints proposés. Ils ne sont pas implémentés dans ce dépôt. Pour les consulter, coller le contenu du fichier dans [Swagger Editor](https://editor.swagger.io/).
 
@@ -86,3 +86,7 @@ Le fichier `swagger-transactions.yaml` (Swagger 2.0) décrit les endpoints propo
 | `DELETE` | `/api/v1/user/transactions/{transactionId}/note` | Suppression de la note |
 
 Tous ces endpoints nécessitent un token JWT dans l'en-tête `Authorization: Bearer <token>`.
+
+---
+
+*Séréta THAI - Étudiante Intégratrice Web chez OpenClassrooms 2026-2027*
