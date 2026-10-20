@@ -1,137 +1,88 @@
-# Travail en cours
+# Argent Bank – Back-end (API)
 
-## Pour lancer le projet
+API du projet 10 de la formation **Intégrateur web** d'OpenClassrooms. Elle est utilisée par le front-end : [OC-P10_ArgentBank-Frontend](https://github.com/Sereta80/OC-P10_ArgentBank-Frontend).
 
-### 1. Terminal 1 — Lancer le serveur de base de données (MongoDB)
+Ce dépôt contient aussi la **proposition de documentation Swagger pour la phase 2 (transactions)** : `swagger-transactions.yaml`.
 
-```bash
-cd ~/Documents/OC/Projets_OC/Projet10-Implementez_le_front_end_d_une_appli_bancaire_avec_React/ArgentBank/OC-P10_ArgentBank_Backend
+## Technologies
 
-~/mongodb/bin/mongod --dbpath ~/data/db
-```
+- Node.js et Express
+- MongoDB et Mongoose
+- JSON Web Token (authentification)
+- Swagger (documentation de l'API)
 
-_(Laisser ce terminal ouvert en arrière-plan)_
+## Prérequis
 
-### 2. Terminal 2 — Réinitialiser la base de données *(optionnel)*
-
-1. Naviguer vers le dossier back-end :
-
-```bash
-cd ~/Documents/OC/Projets_OC/Projet10-Implementez_le_front_end_d_une_appli_bancaire_avec_React/ArgentBank/OC-P10_ArgentBank_Backend
-```
-
-2. Si on a réinitialisé la base de données et si on n'a pas encore dev :
-
-```bash
-npm run populate-db
-```
-
-### 3. Terminal 3 — Lancer l'API (Back-end)
-
-1. Naviguer vers le dossier back-end :
-
-```bash
-cd ~/Documents/OC/Projets_OC/Projet10-Implementez_le_front_end_d_une_appli_bancaire_avec_React/ArgentBank/OC-P10_ArgentBank_Backend
-```
-
-
-2. Démarrer le serveur back-end :
-
-```bash
-npm run dev:server
-```
-
-_(Laisser ce terminal ouvert en arrière-plan)_
-
-
-### 4. Terminal 4 — Lancer l'application (Front-end React)
-
-1. Naviguer vers le dossier front-end :
-
-```bash
-cd ~/Documents/OC/Projets_OC/Projet10-Implementez_le_front_end_d_une_appli_bancaire_avec_React/ArgentBank/OC-P10_ArgentBank-Frontend
-```
-
-2. Démarrer le serveur de développement React :
-
-```bah
-npm run dev
-```
-
-_(Laisser ce terminal ouvert en arrière-plan)_
-
----
-
-
-# Argent Bank API
-
-This codebase contains the code needed to run the backend for Argent Bank.
-
-## Getting Started
-
-### Prerequisites
-
-Argent Bank uses the following tech stack:
-
-- [Node.js v12](https://nodejs.org/en/)
+- [Node.js](https://nodejs.org/) et npm
 - [MongoDB Community Server](https://www.mongodb.com/try/download/community)
 
-Please make sure you have the right versions and download both packages. You can verify this by using the following commands in your terminal:
+Vérifier les installations :
 
 ```bash
-# Check Node.js version
 node --version
-
-# Check Mongo version
-mongo --version
+mongod --version
 ```
 
-### Instructions
+## Installation et lancement
 
-1. Fork this repo
-1. Clone the repo onto your computer
-1. Open a terminal window in the cloned project
-1. Run the following commands:
+1. Cloner le dépôt et installer les dépendances :
 
 ```bash
-# Install dependencies
+git clone https://github.com/Sereta80/OC-P10_ArgentBank_Backend.git
+cd OC-P10_ArgentBank_Backend
 npm install
+```
 
-# Start local dev server
+2. Démarrer MongoDB, dans un terminal à laisser ouvert :
+
+```bash
+mongod --dbpath <chemin/vers/votre/dossier/data/db>
+```
+
+3. Démarrer l'API, dans un second terminal à laisser ouvert :
+
+```bash
 npm run dev:server
+```
 
-# Populate database with two users
+L'API est disponible sur `http://localhost:3001`.
+
+4. Au premier lancement, créer les deux utilisateurs de test, dans un troisième terminal :
+
+```bash
 npm run populate-db
 ```
 
-Your server should now be running at http://locahost:3001 and you will now have two users in your MongoDB database!
+## Comptes de test
 
-## Populated Database Data
+| Utilisateur | Email | Mot de passe | Nom d'utilisateur |
+|---|---|---|---|
+| Tony Stark | `tony@stark.com` | `password123` | `Iron` |
+| Steve Rogers | `steve@rogers.com` | `password456` | `Captain` |
 
-Once you run the `populate-db` script, you should have two users in your database:
+## Documentation de l'API
 
-### Tony Stark
+### Phase 1 – Utilisateur (implémentée)
 
-- First Name: `Tony`
-- Last Name: `Stark`
-- Email: `tony@stark.com`
-- Password: `password123`
+Une fois l'API lancée, la documentation est disponible sur : `http://localhost:3001/api-docs` (fichier `swagger.yaml`).
 
-### Steve Rogers
+Endpoints utilisés par le front-end :
 
-- First Name: `Steve`,
-- Last Name: `Rogers`,
-- Email: `steve@rogers.com`,
-- Password: `password456`
+| Méthode | Endpoint | Description |
+|---|---|---|
+| `POST` | `/api/v1/user/login` | Connexion, renvoie un token JWT |
+| `GET` | `/api/v1/user/profile` | Récupère le profil de l'utilisateur connecté |
+| `PUT` | `/api/v1/user/profile` | Modifie le profil de l'utilisateur connecté |
 
-## API Documentation
+### Phase 2 – Transactions (proposition)
 
-To learn more about how the API works, once you have started your local environment, you can visit: http://localhost:3001/api-docs
+Le fichier `swagger-transactions.yaml` (Swagger 2.0) décrit les endpoints proposés. Ils ne sont pas implémentés dans ce dépôt. Pour les consulter, coller le contenu du fichier dans [Swagger Editor](https://editor.swagger.io/).
 
-## Design Assets
+| Méthode | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/v1/user/accounts/{accountId}/transactions` | Transactions du mois en cours pour un compte |
+| `GET` | `/api/v1/user/transactions/{transactionId}` | Détails d'une transaction |
+| `PUT` | `/api/v1/user/transactions/{transactionId}` | Ajout ou modification de la catégorie et de la note |
+| `DELETE` | `/api/v1/user/transactions/{transactionId}/note` | Suppression de la note |
 
-Static HTML and CSS has been created for most of the site and is located in: `/designs`.
-
-For some of the dynamic features, like toggling user editing, there is a mock-up for it in `/designs/wireframes/edit-user-name.png`.
-
-And for the API model that you will be proposing for transactitons, the wireframe can be found in `/designs/wireframes/transactions.png`.
+Tous ces endpoints nécessitent un token JWT dans l'en-tête `Authorization: Bearer <token>`.
